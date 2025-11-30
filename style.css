@@ -184,23 +184,21 @@ ul li::before {
     border: 1px solid var(--border-color);
 }
 
-/* ********** תיקון: הצגת תמונת הפרופיל כצורה אובלית ********** */
+/* ********** החזרה למסגרת עגולה לתמונת הפרופיל ********** */
 .profile-image-container {
     flex-shrink: 0;
-    width: 200px; /* רוחב קבוע */
-    height: 250px; /* גובה גדול יותר מהרוחב, יוצר אליפסה אנכית */
-    
-    border-radius: 50% / 40%; /* 50% רוחב, 40% גובה יוצר אובל מעודן */
-    overflow: hidden; /* חותך את מה שחורג מהאובל */
-    
+    width: 220px; /* רוחב קבוע */
+    height: 220px; /* גובה שווה לרוחב ליצירת עיגול */
+    border-radius: 50%; /* הופך לעיגול מושלם */
+    overflow: hidden; /* חותך את מה שחורג מהעיגול */
     border: 6px solid var(--accent-color);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .profile-image-container img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; /* חותך קצוות כדי למלא את המסגרת האובלית */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* חותך קצוות כדי למלא את העיגול */
 }
 /* *************************************************************** */
 
@@ -231,3 +229,12 @@ ul li::before {
 }
 
 .nav-item a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* נשמר העיגול לתמונות הניווט */
+.nav-item img {
+    width: 170px;
+    height: 170px;
+    border-
