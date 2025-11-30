@@ -31,7 +31,7 @@ body {
     max-width: 1000px;
     margin: 30px auto;
     padding: 30px;
-    /* ********** תיקון נתיב ותמונת רקע פנימית ********** */
+    /* ********** רקע פנימי מתוקן: background.jpg ********** */
     background-image: url('images/background.jpg'); 
     background-size: cover;
     background-color: rgba(255, 255, 255, 0.6); 
@@ -184,34 +184,24 @@ ul li::before {
     border: 1px solid var(--border-color);
 }
 
+/* ********** תיקון: הצגת תמונת הפרופיל כריבוע/מלבן מלא ********** */
 .profile-image-container {
     flex-shrink: 0;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    overflow: hidden;
+    max-width: 220px; 
+    height: auto; 
+    border-radius: 12px; /* פינות מעוגלות עדינות במקום עיגול מלא */
+    overflow: visible; /* ביטול חיתוך */
     border: 6px solid var(--accent-color);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .profile-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; /* הצגת התמונה במלואה ללא חיתוך */
 }
+/* *************************************************************** */
 
-.about-me-text {
-    flex-grow: 1;
-}
-
-.about-me-text h2 {
-    margin-top: 0;
-    text-align: right;
-    font-size: 2.8em;
-    border-bottom: 3px solid var(--secondary-color);
-    padding-bottom: 15px;
-    color: var(--primary-color);
-}
 
 /* סקשן הניווט הראשי */
 .navigation-grid {
@@ -220,7 +210,6 @@ ul li::before {
     gap: 35px;
     justify-content: center;
     margin-top: 60px;
-    /* הגדרת Grid תקינה חזרה למקומה */
 }
 
 .nav-item {
@@ -244,10 +233,11 @@ ul li::before {
     color: var(--text-color);
 }
 
+/* נשמר העיגול לתמונות הניווט */
 .nav-item img {
     width: 170px;
     height: 170px;
-    border-radius: 50%;
+    border-radius: 50%; 
     object-fit: cover;
     border: 4px solid var(--secondary-color);
     margin-bottom: 15px;
@@ -316,4 +306,98 @@ footer {
     background-color: var(--footer-bg);
     color: white;
     border-radius: 0 0 12px 12px;
-    font-size:
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+/* רספונסיביות משופרת */
+@media (max-width: 768px) {
+    .container {
+        margin: 15px auto;
+        padding: 20px;
+    }
+    .main-header h1 {
+        font-size: 3.5em;
+    }
+    .main-header p {
+        font-size: 1.6em;
+    }
+    .about-me-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+        padding: 30px;
+    }
+    .profile-image-container {
+        max-width: 180px;
+    }
+    .about-me-text h2 {
+        text-align: center;
+        font-size: 2em;
+    }
+    .navigation-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 25px;
+    }
+    .nav-item img {
+        width: 110px;
+        height: 110px;
+    }
+    .nav-item p {
+        font-size: 1em;
+    }
+    
+    /* יישור כפתורים לטור במסכים קטנים */
+    .contact-buttons {
+        flex-direction: column; 
+    }
+    
+    .button, .whatsapp-button {
+        display: block;
+        width: calc(100% - 24px); 
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+    .music-links .button {
+        width: auto; 
+        margin: 5px;
+    }
+    .subpage-content {
+        padding: 30px;
+    }
+    .subpage-content h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header h1 {
+        font-size: 2.8em;
+    }
+    .main-header p {
+        font-size: 1.2em;
+    }
+    .profile-image-container {
+        max-width: 140px;
+    }
+    .about-me-text h2 {
+        font-size: 1.8em;
+    }
+    .navigation-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+    }
+    .nav-item img {
+        width: 90px;
+        height: 90px;
+    }
+    .nav-item p {
+        font-size: 0.9em;
+    }
+    .button, .whatsapp-button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}
