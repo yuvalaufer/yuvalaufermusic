@@ -9,8 +9,11 @@
     --footer-bg: #073840; 
     --card-bg: #FFFFFF; 
     --border-color: #E0E0E0; 
-    --social-bg-color: #C1E6D3; /* ירוק בקבוק בהיר מותאם */
-    --social-hover-color: #A9D5C0; /* ירוק כהה יותר בריחוף */
+    
+    /* ********** צבעי הסושיאל החדשים ********** */
+    --social-bg-color: #A0D2EB; /* תכלת */
+    --social-hover-color: #89CFF0; /* תכלת כהה יותר בריחוף */
+    /* ******************************************** */
 }
 
 /* הגדרות גלובליות */
@@ -168,7 +171,7 @@ ul li::before {
     font-size: 2em; 
     color: var(--text-color);
     margin-top: 0;
-    font-weight: bold; /* הדגשת "איש-פסנתר" */
+    font-weight: bold; 
 }
 
 /* סקשן "מי אני" */
@@ -185,7 +188,7 @@ ul li::before {
     border: 1px solid var(--border-color);
 }
 
-/* ********** תמונת פרופיל עגולה ********** */
+/* תמונת פרופיל עגולה */
 .profile-image-container {
     flex-shrink: 0;
     width: 220px; 
@@ -201,52 +204,54 @@ ul li::before {
     height: 100%;
     object-fit: cover; 
 }
-/* *************************************************************** */
 
-/* ********** עיצוב קישורי רשתות חברתיות (מתוקן) ********** */
+
+/* ********** עיצוב קישורי רשתות חברתיות - סופי ומעודכן ********** */
 .social-links {
     display: flex; 
-    flex-direction: column; /* מסדר את התיבות בטור */
+    flex-direction: column; 
     align-items: center;
     gap: 15px; 
-    margin: 20px auto 40px auto; /* ממקם במרכז הדף */
-    width: 90%; 
-    max-width: 400px; /* רוחב מקסימלי לתיבות */
+    margin: 20px auto 40px auto; 
+    max-width: 100%; 
 }
 
 .social-link {
     display: flex; 
     align-items: center;
-    justify-content: space-between; /* מפריד את הטקסט והלוגו לקצוות */
+    justify-content: center; /* כדי לצמצם מרחק */
+    gap: 10px; /* רווח קטן בין הטקסט ללוגו */
     
-    background-color: var(--social-bg-color); /* ירוק בקבוק בהיר */
+    background-color: var(--social-bg-color); /* תכלת */
     color: var(--text-color);
     text-decoration: none; 
     
-    width: 100%; 
-    padding: 12px 25px;
-    border-radius: 8px;
+    width: fit-content; /* מקצר את הקישור לגודל התוכן בלבד */
+    padding: 10px 30px; /* מרווח פנימי מותאם (קצר יותר) */
+    border-radius: 50px; /* צורה אליפטית/כפתור */
     font-weight: 600;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* מסגרת מובלטת */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    /* צל חזק יותר להבלטה (כפתור מובלט) */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+    border: none;
 }
 
 .social-link:hover {
     background-color: var(--social-hover-color); 
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px); /* אפקט קפיצה קטן להבלטה נוספת */
 }
 
 .social-link .social-name {
     font-size: 1.1em;
-    margin-left: 10px; /* רווח קל מהלוגו */
     font-weight: bold;
+    /* ה-gap של ה-social-link כבר מפריד, אין צורך במרווח נוסף */
 }
 
 .social-link img {
     width: 30px; 
     height: 30px;
     border-radius: 50%;
-    margin-right: 15px; /* מרווח בין הלוגו לטקסט (RTL) */
     transition: transform 0.2s;
 }
 
@@ -427,7 +432,8 @@ footer {
 
     /* רספונסיביות סושיאל */
     .social-link {
-        max-width: 100%;
+        width: 90%; /* חוזר לרוחב מלא יחסית לגודל המסך כדי לאפשר לחיצה נוחה */
+        max-width: 300px;
     }
     .social-link img {
         width: 35px;
