@@ -10,7 +10,7 @@
     --card-bg: #FFFFFF; 
     --border-color: #E0E0E0; 
     
-    /* ********** צבעי הסושיאל נשארים כאן כמשתנים לשימוש חיצוני ********** */
+    /* צבעי הסושיאל נשארים כאן כמשתנים לשימוש חיצוני */
     --social-bg-color: #5D99C6; 
     --social-hover-color: #407BA3; 
 }
@@ -25,7 +25,7 @@ body {
     text-align: right; 
     line-height: 1.7; 
     background-color: var(--light-bg);
-    background-image: url('images/site_background.jpg'); 
+    background-image: url('images/site_background.jpg'); /* רקע כללי מהתמונה */
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
@@ -35,7 +35,7 @@ body {
     max-width: 1000px;
     margin: 30px auto;
     padding: 30px;
-    background-image: url('images/background.jpg'); 
+    background-image: url('images/background.jpg'); /* רקע פנימי */
     background-size: cover;
     background-color: rgba(255, 255, 255, 0.6); 
     background-blend-mode: overlay; 
@@ -66,6 +66,7 @@ h3 {
 
 p {
     margin-bottom: 18px;
+    font-size: 1.1em; /* ********** התיקון: הגדלת גופן הפסקאות ********** */
 }
 
 ul {
@@ -78,6 +79,7 @@ ul li {
     position: relative;
     margin-bottom: 10px;
     padding-right: 25px;
+    font-size: 1.1em; /* ********** התיקון: הגדלת גופן הרשימות ********** */
 }
 
 ul li::before {
@@ -205,7 +207,7 @@ ul li::before {
 }
 
 
-/* ********** סקשן הניווט הראשי (GRID) - יציב ומתוקן ********** */
+/* סקשן הניווט הראשי */
 .navigation-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -258,4 +260,166 @@ ul li::before {
     color: var(--primary-color);
 }
 
-/* ... (שאר CSS) ... */
+/* סקשן תוכן בדפי המשנה */
+.subpage-content {
+    padding: 40px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+}
+
+.subpage-content h2 {
+    text-align: right;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 15px;
+    margin-bottom: 35px;
+    color: var(--primary-color);
+}
+
+.music-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.music-links .button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+}
+
+/* איזור כפתורי יצירת קשר - Flexbox ליישור אנכי */
+.contact-buttons {
+    text-align: center;
+    margin-top: 50px;
+    border-top: 3px solid var(--secondary-color);
+    padding-top: 30px;
+    
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
+}
+
+/* Footer כללי */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 25px;
+    background-color: var(--footer-bg);
+    color: white;
+    border-radius: 0 0 12px 12px;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+/* רספונסיביות משופרת */
+@media (max-width: 768px) {
+    .container {
+        margin: 15px auto;
+        padding: 20px;
+    }
+    .main-header h1 {
+        font-size: 3.5em;
+    }
+    .main-header p {
+        font-size: 1.6em;
+    }
+    .about-me-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+        padding: 30px;
+    }
+    .profile-image-container {
+        width: 180px;
+        height: 180px;
+    }
+    .about-me-text h2 {
+        text-align: center;
+        font-size: 2em;
+    }
+    .navigation-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 25px;
+    }
+    .nav-item img {
+        width: 110px;
+        height: 110px;
+    }
+    .nav-item p {
+        font-size: 1em;
+    }
+    
+    /* יישור כפתורים לטור במסכים קטנים */
+    .contact-buttons {
+        flex-direction: column; 
+    }
+    
+    .button, .whatsapp-button {
+        display: block;
+        width: calc(100% - 24px); 
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+    .music-links .button {
+        width: auto; 
+        margin: 5px;
+    }
+    .subpage-content {
+        padding: 30px;
+    }
+    .subpage-content h2 {
+        font-size: 2em;
+    }
+
+    /* רספונסיביות סושיאל */
+    .social-link {
+        width: 90%; 
+        max-width: 300px;
+    }
+    .social-link img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header h1 {
+        font-size: 2.8em;
+    }
+    .main-header p {
+        font-size: 1.2em;
+    }
+    .profile-image-container {
+        width: 140px;
+        height: 140px;
+    }
+    .about-me-text h2 {
+        font-size: 1.8em;
+    }
+    .navigation-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+    }
+    .nav-item img {
+        width: 90px;
+        height: 90px;
+    }
+    .nav-item p {
+        font-size: 0.9em;
+    }
+    .button, .whatsapp-button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    
+    /* רספונסיביות סושיאל */
+    .social-link img {
+        width: 30px;
+        height: 30px;
+    }
+}
