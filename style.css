@@ -42,6 +42,7 @@ body {
     background-position: center center; 
     border-radius: 12px; 
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    position: relative; /* ********** תיקון: חובה בשביל למקם את הכפתור העליון ********** */
 }
 
 
@@ -65,8 +66,8 @@ h3 {
 }
 
 p {
-    margin-bottom: 18px;
-    font-size: 1.3em; /* ********** התיקון: הגדלת גופן הפסקאות ********** */
+    margin-bottom: 25px; /* ********** גודל מרווח מעודכן ********** */
+    font-size: 1.1em; /* ********** גודל פונט מעודכן ********** */
 }
 
 ul {
@@ -79,7 +80,7 @@ ul li {
     position: relative;
     margin-bottom: 10px;
     padding-right: 25px;
-    font-size: 1.1em; /* ********** התיקון: הגדלת גופן הרשימות ********** */
+    font-size: 1.1em; /* ********** גודל פונט מעודכן ********** */
 }
 
 ul li::before {
@@ -123,6 +124,25 @@ ul li::before {
     background-color: var(--button-hover);
     color: white;
 }
+
+/* ********** כללים חדשים: כפתור חזרה לדף הבית בראש הדף ********** */
+.top-home-button {
+    position: absolute;
+    left: 30px; /* רווח פנימי שמאלי של הקונטיינר */
+    top: 30px; /* רווח פנימי עליון של הקונטיינר */
+    font-size: 0.9em;
+    padding: 8px 15px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    z-index: 10;
+}
+
+.top-home-button:hover {
+    background-color: var(--button-hover);
+    color: white;
+}
+/* ************************************************************* */
+
 
 /* כפתור וואטסאפ */
 .whatsapp-button {
@@ -314,6 +334,28 @@ footer {
     letter-spacing: 0.5px;
 }
 
+/* ********** כללים חדשים: רספונסיביות לנגן וידאו מוטמע (Embed) ********** */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* יחס גובה-רוחב 16:9 */
+    padding-top: 25px;
+    height: 0;
+    margin: 20px 0;
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* ************************************************************************* */
+
+
 /* רספונסיביות משופרת */
 @media (max-width: 768px) {
     .container {
@@ -376,14 +418,14 @@ footer {
         font-size: 2em;
     }
 
-    /* רספונסיביות סושיאל */
-    .social-link {
+    /* רספונסיביות לכפתור העליון */
+    .top-home-button {
+        position: static; /* יחזור למצב רגיל במובייל */
+        display: block;
         width: 90%; 
-        max-width: 300px;
-    }
-    .social-link img {
-        width: 35px;
-        height: 35px;
+        margin: 0 auto 20px auto; /* יוצב במרכז מעל הכותרת */
+        font-size: 1em;
+        padding: 10px 20px;
     }
 }
 
@@ -415,11 +457,5 @@ footer {
     .button, .whatsapp-button {
         padding: 10px 15px;
         font-size: 0.9em;
-    }
-    
-    /* רספונסיביות סושיאל */
-    .social-link img {
-        width: 30px;
-        height: 30px;
     }
 }
