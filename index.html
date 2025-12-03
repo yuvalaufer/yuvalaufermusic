@@ -5,7 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>יובל לאופר - איש-פסנתר</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    
+    <style>
+        .social-links {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+            gap: 15px; 
+            margin: 20px auto 40px auto; 
+            max-width: 100%; 
+        }
+
+        .social-link {
+            display: flex; 
+            align-items: center;
+            justify-content: space-between; 
+            
+            width: 320px; /* רוחב קבוע ואחיד */
+            
+            background-color: #5D99C6; /* כחול כהה (Social BG) */
+            color: white; 
+            text-decoration: none; 
+            
+            padding: 10px 25px; 
+            border-radius: 50px; 
+            font-weight: bold;
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+            
+            /* הבלטה ועומק חזקים */
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45); 
+            border-bottom: 3px solid rgba(0, 0, 0, 0.2); 
+        }
+
+        .social-link:hover {
+            background-color: #407BA3; /* כחול כהה בריחוף */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            transform: translateY(-4px); 
+        }
+
+        .social-link .social-name {
+            font-size: 1.1em;
+        }
+
+        .social-link img {
+            width: 30px; 
+            height: 30px;
+            border-radius: 50%;
+        }
+    </style>
+    </head>
 <body>
     <div class="container">
         <header class="main-header">
