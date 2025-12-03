@@ -19,42 +19,43 @@
         .social-link {
             display: flex; 
             align-items: center;
-            justify-content: flex-start; /* מצמיד את האלמנטים לימין */
-            gap: 10px; /* מרווח קטן בין הטקסט ללוגו */
+            justify-content: space-between; 
             
-            width: 260px; /* רוחב קבוע וצמצום המסגרת */
+            width: 260px; 
             
-            background-color: #5D99C6; /* כחול כהה */
+            background-color: #5D99C6; 
             color: white; 
             text-decoration: none; 
             
-            padding: 10px 15px; /* צמצום ה-padding */
+            padding: 10px 15px; 
             border-radius: 50px; 
             font-weight: bold;
             transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
             
-            /* הבלטה ועומק חזקים */
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45); 
             border-bottom: 3px solid rgba(0, 0, 0, 0.2); 
+            transform: translateY(0);
         }
 
         .social-link:hover {
-            background-color: #407BA3; /* כחול כהה בריחוף */
+            background-color: #407BA3; 
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
             transform: translateY(-4px); 
         }
 
         .social-link .social-name {
             font-size: 1.1em;
-            margin-right: auto; /* דוחף את הטקסט שמאלה */
         }
 
         .social-link img {
             width: 30px; 
             height: 30px;
             border-radius: 50%;
-            margin-left: 10px; /* מרווח קטן משמאל (כיוון ה-RTL) */
-            order: -1; /* מכריח את הלוגו להיות משמאל לטקסט */
+            transition: transform 0.2s;
+        }
+
+        .social-link:hover img {
+            transform: scale(1.05);
         }
     </style>
     </head>
@@ -103,4 +104,53 @@
             </a>
         </div>
         <section class="navigation-grid">
-            <div class="
+            <div class="nav-item">
+                <a href="lessons.html">
+                    <img src="images/lessons.jpg" alt="שיעורי פסנתר">
+                    <p>שיעורי פסנתר</p>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="recordings.html">
+                    <img src="images/recordings.jpg" alt="אולפן הקלטות ביתי">
+                    <p>אולפן הקלטות ביתי</p>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="translate.html">
+                    <img src="images/translate.jpg" alt="תרגום שירים">
+                    <p>תרגום שירים</p>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="vocals.html">
+                    <img src="images/vocals.jpg" alt="עיבודים קוליים">
+                    <p>עיבודים קוליים</p>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="playback.html">
+                    <img src="images/playback.jpg" alt="ליווי מוזיקלי בתיאטרון פלייבק">
+                    <p>ליווי מוזיקלי בתיאטרון פלייבק</p>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="accompanying.html">
+                    <img src="images/accompanying.jpg" alt="ליווי זמרות וזמרים">
+                    <p>ליווי זמרות וזמרים</p>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="mymusic.html">
+                    <img src="images/mymusic.jpg" alt="המוזיקה שלי">
+                    <p>המוזיקה שלי</p>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 יובל לאופר. כל הזכויות שמורות.</p>
+        </footer>
+    </div>
+</body>
+</html>
