@@ -1,5 +1,5 @@
 :root {
-    /* צבעים: כחול-ירוק כהה, כפי שביקשתם */
+    /* צבעים: כחול-ירוק כהה */
     --primary-color: #0A4F5B; 
     --secondary-color: #2C7A7B; 
     --accent-color: #FFD700; 
@@ -10,10 +10,9 @@
     --card-bg: #FFFFFF; 
     --border-color: #E0E0E0; 
     
-    /* ********** צבעי הסושיאל החדשים: כחול כהה יותר ********** */
-    --social-bg-color: #5D99C6; /* כחול בינוני-כהה יותר */
-    --social-hover-color: #407BA3; /* כחול כהה בריחוף */
-    /* ******************************************** */
+    /* צבעי הסושיאל הסופיים: כחול כהה יותר */
+    --social-bg-color: #5D99C6; 
+    --social-hover-color: #407BA3; 
 }
 
 /* הגדרות גלובליות */
@@ -26,7 +25,7 @@ body {
     text-align: right; 
     line-height: 1.7; 
     background-color: var(--light-bg);
-    background-image: url('images/site_background.jpg'); /* רקע כללי מהתמונה */
+    background-image: url('images/site_background.jpg'); 
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
@@ -52,78 +51,109 @@ h1, h2, h3 {
     margin-bottom: 25px;
     font-weight: 700;
 }
+/* ... (CSS רגיל) ... */
 
-h1 {
-    font-size: 3.8em;
+/* ********** תמונת פרופיל עגולה (חוזר ליציב) ********** */
+.profile-image-container {
+    flex-shrink: 0;
+    width: 220px; 
+    height: 220px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    border: 6px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-h2 {
-    font-size: 2.5em;
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
 }
 
-h3 {
-    font-size: 1.8em;
-}
-
-p {
-    margin-bottom: 18px;
-}
-
-ul {
-    list-style: none;
-    padding-right: 20px;
-    margin-bottom: 25px;
-}
-
-ul li {
-    position: relative;
-    margin-bottom: 10px;
-    padding-right: 25px;
-}
-
-ul li::before {
-    content: '🎵';
-    color: var(--secondary-color);
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-
-/* כפתורים כלליים */
-.button {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 14px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 12px 7px;
-    border: none;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.button:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-.button.accent {
-    background-color: var(--accent-color);
-    color: var(--text-color);
-}
-
-.button.accent:hover {
-    background-color: var(--button-hover);
-    color: white;
-}
-
-/* כפתור וואטסאפ */
-.whatsapp-button {
+/* ********** עיצוב קישורי רשתות חברתיות - סופי ומובלט ********** */
+.social-links {
     display: flex; 
-    align-
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px; 
+    margin: 20px auto 40px auto; 
+    max-width: 100%; 
+}
+
+.social-link {
+    /* **רוחב קבוע ואחיד** לכל הכפתורים */
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+    
+    width: 320px; 
+    
+    background-color: var(--social-bg-color); 
+    color: white; 
+    text-decoration: none; 
+    
+    padding: 10px 25px; 
+    border-radius: 50px; 
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    
+    /* ********** הבלטה ועומק חזקים ********** */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35); 
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2); 
+}
+
+.social-link:hover {
+    background-color: var(--social-hover-color); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px); 
+}
+
+.social-link .social-name {
+    font-size: 1.1em;
+}
+
+.social-link img {
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.social-link:hover img {
+    transform: scale(1.05);
+}
+/* ************************************************** */
+
+
+/* ********** סקשן הניווט הראשי (GRID) - חזר ליציב ********** */
+.navigation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 35px;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.nav-item {
+    text-align: center;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.09);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+/* ... (שאר CSS ה-GRID) ... */
+
+/* ********** נשמר העיגול לתמונות הניווט ********** */
+.nav-item img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 4px solid var(--secondary-color);
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* ... (שאר ה-CSS - רספונסיביות וכו') ... */
