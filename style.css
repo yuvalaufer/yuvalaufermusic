@@ -1,479 +1,237 @@
 :root {
-    /* צבעים: כחול-ירוק כהה, כפי שביקשתם */
-    --primary-color: #0A4F5B; 
-    --secondary-color: #2C7A7B; 
-    --accent-color: #FFD700; 
-    --text-color: #1A365D; 
-    --light-bg: #F8F4F9; 
-    --button-hover: #E6C200; 
-    --footer-bg: #073840; 
-    --card-bg: #FFFFFF; 
-    --border-color: #E0E0E0; 
-    
-    /* ********** צבעי הסושיאל החדשים ********** */
-    --social-bg-color: #A0D2EB; /* תכלת */
-    --social-hover-color: #89CFF0; /* תכלת כהה יותר בריחוף */
-    /* ******************************************** */
+    /* צבעים: כחול-ירוק כהה, כפי שביקשתם */
+    --primary-color: #0A4F5B; 
+    --secondary-color: #2C7A7B; 
+    --accent-color: #FFD700; 
+    --text-color: #1A365D; 
+    --light-bg: #F8F4F9; 
+    --button-hover: #E6C200; 
+    --footer-bg: #073840; 
+    --card-bg: #FFFFFF; 
+    --border-color: #E0E0E0; 
+    
+    /* ********** צבעי הסושיאל הסופיים: כחול כהה יותר ********** */
+    --social-bg-color: #5D99C6; /* כחול בינוני-כהה יותר */
+    --social-hover-color: #407BA3; /* כחול כהה בריחוף */
 }
 
 /* הגדרות גלובליות */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: var(--text-color);
-    direction: rtl; 
-    text-align: right; 
-    line-height: 1.7; 
-    background-color: var(--light-bg);
-    background-image: url('images/site_background.jpg'); /* רקע כללי מהתמונה */
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    direction: rtl; 
+    text-align: right; 
+    line-height: 1.7; 
+    background-color: var(--light-bg);
+    background-image: url('images/site_background.jpg'); 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
 
 .container {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 30px;
-    background-image: url('images/background.jpg'); 
-    background-size: cover;
-    background-color: rgba(255, 255, 255, 0.6); 
-    background-blend-mode: overlay; 
-    background-position: center center; 
-    border-radius: 12px; 
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background-image: url('images/background.jpg'); 
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.6); 
+    background-blend-mode: overlay; 
+    background-position: center center; 
+    border-radius: 12px; 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
-
-h1, h2, h3 {
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 25px;
-    font-weight: 700;
-}
-
-h1 {
-    font-size: 3.8em;
-}
-
-h2 {
-    font-size: 2.5em;
-}
-
-h3 {
-    font-size: 1.8em;
-}
-
-p {
-    margin-bottom: 18px;
-}
-
-ul {
-    list-style: none;
-    padding-right: 20px;
-    margin-bottom: 25px;
-}
-
-ul li {
-    position: relative;
-    margin-bottom: 10px;
-    padding-right: 25px;
-}
-
-ul li::before {
-    content: '🎵';
-    color: var(--secondary-color);
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-
-/* כפתורים כלליים */
-.button {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 14px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 12px 7px;
-    border: none;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.button:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-.button.accent {
-    background-color: var(--accent-color);
-    color: var(--text-color);
-}
-
-.button.accent:hover {
-    background-color: var(--button-hover);
-    color: white;
-}
-
-/* כפתור וואטסאפ */
-.whatsapp-button {
-    display: flex; 
-    align-items: center;
-    background-color: #25D366;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 12px 7px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.whatsapp-button img {
-    width: 26px;
-    height: 26px;
-    margin-left: 10px;
-    filter: invert(100%);
-}
-
-.whatsapp-button:hover {
-    background-color: #1DA851;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
+/* ... (כללי עיצוב כלליים) ... */
 
 /* כותרת האתר ב-index.html */
 .main-header {
-    text-align: center;
-    margin-bottom: 50px;
-    padding-bottom: 25px;
-    border-bottom: 3px solid var(--secondary-color);
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 25px;
+    border-bottom: 3px solid var(--secondary-color);
 }
 
 .main-header h1 {
-    font-size: 4.5em;
-    margin-bottom: 8px;
-    color: var(--primary-color);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.08);
+    font-size: 4.5em;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 .main-header p {
-    font-size: 2em; 
-    color: var(--text-color);
-    margin-top: 0;
-    font-weight: bold; 
+    font-size: 2em; 
+    color: var(--text-color);
+    margin-top: 0;
+    font-weight: bold; 
 }
 
 /* סקשן "מי אני" */
 .about-me-section {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 60px;
-    padding: 40px;
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    padding: 40px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
 }
 
-/* תמונת פרופיל עגולה */
+/* תמונת פרופיל עגולה - ודא שפועל */
 .profile-image-container {
-    flex-shrink: 0;
-    width: 220px; 
-    height: 220px; 
-    border-radius: 50%; 
-    overflow: hidden; 
-    border: 6px solid var(--accent-color);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    width: 220px; 
+    height: 220px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    border: 6px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .profile-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
 }
 
 
-/* ********** עיצוב קישורי רשתות חברתיות - סופי ומעודכן ********** */
+/* ********** עיצוב קישורי רשתות חברתיות - סופי ומובלט (הימנעות מקונפליקט) ********** */
 .social-links {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;
-    gap: 15px; 
-    margin: 20px auto 40px auto; 
-    max-width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px; 
+    margin: 20px auto 40px auto; 
+    max-width: 100%; 
 }
 
 .social-link {
-    display: flex; 
-    align-items: center;
-    justify-content: center; /* כדי לצמצם מרחק */
-    gap: 10px; /* רווח קטן בין הטקסט ללוגו */
-    
-    background-color: var(--social-bg-color); /* תכלת */
-    color: var(--text-color);
-    text-decoration: none; 
-    
-    width: fit-content; /* מקצר את הקישור לגודל התוכן בלבד */
-    padding: 10px 30px; /* מרווח פנימי מותאם (קצר יותר) */
-    border-radius: 50px; /* צורה אליפטית/כפתור */
-    font-weight: 600;
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
-    /* צל חזק יותר להבלטה (כפתור מובלט) */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
-    border: none;
+    /* **רוחב קבוע ואחיד** לכל הכפתורים */
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+    
+    width: 320px; /* רוחב קבוע */
+    
+    background-color: var(--social-bg-color); 
+    color: white; 
+    text-decoration: none; 
+    
+    padding: 10px 25px; 
+    border-radius: 50px; /* צורה אליפטית */
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    
+    /* ********** הבלטה ועומק חזקים ********** */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35); 
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2); 
 }
 
 .social-link:hover {
-    background-color: var(--social-hover-color); 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    transform: translateY(-2px); /* אפקט קפיצה קטן להבלטה נוספת */
+    background-color: var(--social-hover-color); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px); 
 }
 
 .social-link .social-name {
-    font-size: 1.1em;
-    font-weight: bold;
-    /* ה-gap של ה-social-link כבר מפריד, אין צורך במרווח נוסף */
+    font-size: 1.1em;
 }
 
 .social-link img {
-    width: 30px; 
-    height: 30px;
-    border-radius: 50%;
-    transition: transform 0.2s;
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+    transition: transform 0.2s;
 }
 
 .social-link:hover img {
-    transform: scale(1.05);
+    transform: scale(1.05);
 }
 /* ************************************************** */
 
 
-/* סקשן הניווט הראשי */
+/* ********** סקשן הניווט הראשי (GRID) - ייצוב כללי ********** */
 .navigation-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 35px;
-    justify-content: center;
-    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 35px;
+    justify-content: center;
+    margin-top: 60px;
 }
 
 .nav-item {
-    text-align: center;
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.09);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    border: 1px solid var(--border-color);
+    text-align: center;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.09);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 .nav-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    background-color: var(--light-bg);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background-color: var(--light-bg);
 }
 
 .nav-item a {
-    text-decoration: none;
-    color: var(--text-color);
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 /* נשמר העיגול לתמונות הניווט */
 .nav-item img {
-    width: 170px;
-    height: 170px;
-    border-radius: 50%; 
-    object-fit: cover;
-    border: 4px solid var(--secondary-color);
-    margin-bottom: 15px;
-    transition: border-color 0.3s ease, transform 0.3s ease;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 4px solid var(--secondary-color);
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-item:hover img {
-    border-color: var(--accent-color);
-    transform: scale(1.05);
+    border-color: var(--accent-color);
+    transform: scale(1.05);
 }
 
 .nav-item p {
-    font-weight: 700;
-    font-size: 1.25em;
-    margin: 0;
-    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.25em;
+    margin: 0;
+    color: var(--primary-color);
 }
+/* ... (שאר CSS) ... */
 
-/* סקשן תוכן בדפי המשנה */
-.subpage-content {
-    padding: 40px;
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid var(--border-color);
-}
-
-.subpage-content h2 {
-    text-align: right;
-    border-bottom: 3px solid var(--secondary-color);
-    padding-bottom: 15px;
-    margin-bottom: 35px;
-    color: var(--primary-color);
-}
-
-.music-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.music-links .button {
-    padding: 12px 25px;
-    font-size: 1.1em;
-}
-
-/* איזור כפתורי יצירת קשר - Flexbox ליישור אנכי */
-.contact-buttons {
-    text-align: center;
-    margin-top: 50px;
-    border-top: 3px solid var(--secondary-color);
-    padding-top: 30px;
-    
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    flex-wrap: wrap; 
-}
-
-/* Footer כללי */
-footer {
-    text-align: center;
-    margin-top: 60px;
-    padding: 25px;
-    background-color: var(--footer-bg);
-    color: white;
-    border-radius: 0 0 12px 12px;
-    font-size: 0.95em;
-    letter-spacing: 0.5px;
-}
-
-/* רספונסיביות משופרת */
+/* ********** ייצוב רספונסיביות סושיאל ********** */
 @media (max-width: 768px) {
-    .container {
-        margin: 15px auto;
-        padding: 20px;
-    }
-    .main-header h1 {
-        font-size: 3.5em;
-    }
-    .main-header p {
-        font-size: 1.6em;
-    }
-    .about-me-section {
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
-        padding: 30px;
-    }
-    .profile-image-container {
-        width: 180px;
-        height: 180px;
-    }
-    .about-me-text h2 {
-        text-align: center;
-        font-size: 2em;
-    }
-    .navigation-grid {
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-        gap: 25px;
-    }
-    .nav-item img {
-        width: 110px;
-        height: 110px;
-    }
-    .nav-item p {
-        font-size: 1em;
-    }
-    
-    /* יישור כפתורים לטור במסכים קטנים */
-    .contact-buttons {
-        flex-direction: column; 
-    }
-    
-    .button, .whatsapp-button {
-        display: block;
-        width: calc(100% - 24px); 
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 1em;
-        padding: 12px 20px;
-    }
-    .music-links .button {
-        width: auto; 
-        margin: 5px;
-    }
-    .subpage-content {
-        padding: 30px;
-    }
-    .subpage-content h2 {
-        font-size: 2em;
-    }
+    /* ... (כללים רגילים) ... */
 
-    /* רספונסיביות סושיאל */
-    .social-link {
-        width: 90%; /* חוזר לרוחב מלא יחסית לגודל המסך כדי לאפשר לחיצה נוחה */
-        max-width: 300px;
-    }
-    .social-link img {
-        width: 35px;
-        height: 35px;
-    }
+    .social-link {
+        width: 90%; 
+        max-width: 300px;
+    }
+    .social-link img {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 @media (max-width: 480px) {
-    .main-header h1 {
-        font-size: 2.8em;
-    }
-    .main-header p {
-        font-size: 1.2em;
-    }
-    .profile-image-container {
-        width: 140px;
-        height: 140px;
-    }
-    .about-me-text h2 {
-        font-size: 1.8em;
-    }
-    .navigation-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 15px;
-    }
-    .nav-item img {
-        width: 90px;
-        height: 90px;
-    }
-    .nav-item p {
-        font-size: 0.9em;
-    }
-    .button, .whatsapp-button {
-        padding: 10px 15px;
-        font-size: 0.9em;
-    }
-    
-    /* רספונסיביות סושיאל */
-    .social-link img {
-        width: 30px;
-        height: 30px;
-    }
+    /* ... (כללים רגילים) ... */
+
+    .social-link {
+        width: 100%;
+        padding: 10px 15px;
+    }
+    .social-link img {
+        width: 30px;
+        height: 30px;
+    }
 }
