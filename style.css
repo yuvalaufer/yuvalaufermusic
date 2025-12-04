@@ -34,12 +34,11 @@ body {
     max-width: 1000px;
     margin: 30px auto;
     padding: 30px;
-    /* תיקון הרקע הפנימי - הוספת התמונה וביטול המיזוג הבעייתי */
     background-image: url('images/background.jpg'); 
     background-size: cover;
     background-position: center center;
-    background-color: rgba(255, 255, 255, 0.7); /* רקע לבן חצי שקוף כדי שהטקסט יהיה קריא */
-    background-blend-mode: lighten; /* שינוי מצב מיזוג שיבטיח שהתמונה תיראה */
+    background-color: rgba(255, 255, 255, 0.7); 
+    background-blend-mode: lighten;
     
     border-radius: 12px; 
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
@@ -59,7 +58,7 @@ h3 { font-size: 1.8em; }
 
 p {
     margin-bottom: 25px; 
-    font-size: 1.1em; /* גופן מוגדל מעט */
+    font-size: 1.1em;
 }
 
 ul {
@@ -85,7 +84,7 @@ ul li::before {
 
 /* --- כפתורים --- */
 .button {
-    display: inline-flex; /* שינוי ליישור לוגו */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: var(--secondary-color);
@@ -154,20 +153,21 @@ ul li::before {
     margin-right: 10px;
 }
 
-/* כפתור עליון */
+/* --- שינוי הצבע וההובר של הכפתור העליון --- */
 .top-home-button {
     position: absolute;
     left: 30px; 
     top: 30px; 
     font-size: 0.9em;
     padding: 8px 15px;
-    background-color: var(--accent-color);
-    color: var(--text-color);
+    background-color: #25D366; /* ← שונה לירוק-בקבוק */
+    color: white;
     z-index: 10;
 }
 .top-home-button:hover {
-    background-color: var(--button-hover);
-    color: white;
+    background-color: #1DA851; /* ← כמו ההובר של הוואטסאפ */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* --- חלקים ראשיים --- */
@@ -208,7 +208,7 @@ ul li::before {
     object-fit: cover; 
 }
 
-/* --- GRID ניווט (החלק הקריטי שנשבר קודם) --- */
+/* --- GRID ניווט --- */
 .navigation-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -290,7 +290,7 @@ ul li::before {
     font-size: 1.1em;
 }
 
-/* כפתורי יצירת קשר תחתונים */
+/* כפתורי יצירת קשר */
 .contact-buttons {
     text-align: center;
     margin-top: 50px;
@@ -314,7 +314,7 @@ footer {
     letter-spacing: 0.5px;
 }
 
-/* --- עיצוב קישורי סושיאל (מבודד כדי לא לשבור GRID) --- */
+/* --- קישורי סושיאל --- */
 .social-links {
     display: flex; 
     flex-direction: column; 
@@ -328,35 +328,34 @@ footer {
     display: flex; 
     align-items: center;
     justify-content: space-between; 
-    width: 260px; /* גודל קבוע */
-    background-color: var(--social-bg-color); 
-    color: white; 
-    text-decoration: none; 
-    padding: 10px 15px; 
-    border-radius: 50px; 
+    width: 260px;
+    background-color: var(--social-bg-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 50px;
     font-weight: bold;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45); 
-    border-bottom: 3px solid rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
     transform: translateY(0);
 }
 
 .social-link:hover {
-    background-color: var(--social-hover-color); 
+    background-color: var(--social-hover-color);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-    transform: translateY(-4px); 
+    transform: translateY(-4px);
 }
 
-.social-link .social-name { font-size: 1.1em; }
-
 .social-link img {
-    width: 30px; 
+    width: 30px;
     height: 30px;
     border-radius: 50%;
     transition: transform 0.2s;
 }
-.social-link:hover img { transform: scale(1.05); }
-
+.social-link:hover img {
+    transform: scale(1.05);
+}
 
 /* רספונסיביות */
 @media (max-width: 768px) {
@@ -392,59 +391,4 @@ footer {
         height: 110px;
     }
     
-    /* תיקון כפתורים במובייל - למניעת חיתוך ומריחה */
     .contact-buttons {
-        flex-direction: column; 
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .button, .whatsapp-button {
-        display: flex;
-        width: 100%; 
-        max-width: 350px; 
-        margin: 10px auto;
-        font-size: 1em;
-        padding: 12px 20px;
-        box-sizing: border-box; 
-    }
-    
-    .top-home-button {
-        position: static; 
-        display: block;
-        width: 90%; 
-        margin: 0 auto 20px auto; 
-        font-size: 1em;
-        padding: 10px 20px;
-    }
-    
-    .social-link {
-        width: 90%; 
-        max-width: 300px;
-    }
-    .social-link img {
-        width: 35px;
-        height: 35px;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-header h1 { font-size: 2.8em; }
-    .main-header p { font-size: 1.2em; }
-    .profile-image-container { width: 140px; height: 140px; }
-    .about-me-text h2 { font-size: 1.8em; }
-    
-    .navigation-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 15px;
-    }
-    .nav-item img {
-        width: 90px;
-        height: 90px;
-    }
-    .nav-item p { font-size: 0.9em; }
-    
-    .button, .whatsapp-button {
-        padding: 10px 15px;
-        font-size: 0.9em;
-    }
-}
