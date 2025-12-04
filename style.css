@@ -1,5 +1,5 @@
 :root {
-    /* צבעים: כחול-ירוק כהה */
+    /* צבעים */
     --primary-color: #0A4F5B; 
     --secondary-color: #2C7A7B; 
     --accent-color: #FFD700; 
@@ -10,12 +10,11 @@
     --card-bg: #FFFFFF; 
     --border-color: #E0E0E0; 
     
-    /* צבעי הסושיאל */
+    /* צבעי סושיאל */
     --social-bg-color: #5D99C6; 
     --social-hover-color: #407BA3; 
 }
 
-/* הגדרות גלובליות */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -35,18 +34,17 @@ body {
     max-width: 1000px;
     margin: 30px auto;
     padding: 30px;
-    
-    /* רקע פנימי */
+    /* תיקון הרקע הפנימי - הוספת התמונה וביטול המיזוג הבעייתי */
     background-image: url('images/background.jpg'); 
     background-size: cover;
-    background-position: center center; 
-    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(255, 255, 255, 0.7); /* רקע לבן חצי שקוף כדי שהטקסט יהיה קריא */
+    background-blend-mode: lighten; /* שינוי מצב מיזוג שיבטיח שהתמונה תיראה */
     
     border-radius: 12px; 
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     position: relative;
 }
-
 
 h1, h2, h3 {
     color: var(--primary-color);
@@ -55,21 +53,13 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-h1 {
-    font-size: 3.8em;
-}
-
-h2 {
-    font-size: 2.5em;
-}
-
-h3 {
-    font-size: 1.8em;
-}
+h1 { font-size: 3.8em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 1.8em; }
 
 p {
     margin-bottom: 25px; 
-    font-size: 1.1em; 
+    font-size: 1.1em; /* גופן מוגדל מעט */
 }
 
 ul {
@@ -82,7 +72,7 @@ ul li {
     position: relative;
     margin-bottom: 10px;
     padding-right: 25px;
-    font-size: 1.1em; 
+    font-size: 1.1em;
 }
 
 ul li::before {
@@ -93,13 +83,11 @@ ul li::before {
     top: 0;
 }
 
-
-/* כפתורים כלליים */
+/* --- כפתורים --- */
 .button {
-    display: inline-flex; 
+    display: inline-flex; /* שינוי ליישור לוגו */
     align-items: center;
     justify-content: center;
-    
     background-color: var(--secondary-color);
     color: white;
     padding: 14px 28px;
@@ -130,30 +118,9 @@ ul li::before {
     color: white;
 }
 
-/* ********** תיקון כפתור עליון לצבע ירוק בקבוק ********** */
-.top-home-button {
-    position: absolute;
-    left: 30px; 
-    top: 30px; 
-    font-size: 0.9em;
-    padding: 8px 15px;
-    
-    background-color: var(--secondary-color); /* התיקון: ירוק בקבוק */
-    color: white; /* טקסט לבן */
-    
-    z-index: 10;
-}
-
-.top-home-button:hover {
-    background-color: var(--primary-color); /* שינוי בריחוף */
-    color: white;
-}
-/* ******************************************************** */
-
-
 /* כפתור וואטסאפ */
 .whatsapp-button {
-    display: inline-flex; 
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: #25D366;
@@ -170,8 +137,8 @@ ul li::before {
 .whatsapp-button img {
     width: 26px;
     height: 26px;
-    margin-left: 10px;
-    filter: invert(100%);
+    margin-right: 10px;
+    filter: none;
 }
 
 .whatsapp-button:hover {
@@ -180,15 +147,31 @@ ul li::before {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* לוגו המייל */
+/* לוגו בתוך כפתור רגיל */
 .button.accent img {
     width: 26px;
     height: 26px;
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 
+/* כפתור עליון */
+.top-home-button {
+    position: absolute;
+    left: 30px; 
+    top: 30px; 
+    font-size: 0.9em;
+    padding: 8px 15px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    z-index: 10;
+}
+.top-home-button:hover {
+    background-color: var(--button-hover);
+    color: white;
+}
 
-/* כותרת האתר ב-index.html */
+/* --- חלקים ראשיים --- */
+
 .main-header {
     text-align: center;
     margin-bottom: 50px;
@@ -196,21 +179,6 @@ ul li::before {
     border-bottom: 3px solid var(--secondary-color);
 }
 
-.main-header h1 {
-    font-size: 4.5em;
-    margin-bottom: 8px;
-    color: var(--primary-color);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.08);
-}
-
-.main-header p {
-    font-size: 2em; 
-    color: var(--text-color);
-    margin-top: 0;
-    font-weight: bold; 
-}
-
-/* סקשן "מי אני" */
 .about-me-section {
     display: flex;
     flex-direction: row-reverse;
@@ -224,7 +192,6 @@ ul li::before {
     border: 1px solid var(--border-color);
 }
 
-/* תמונת פרופיל עגולה */
 .profile-image-container {
     flex-shrink: 0;
     width: 220px; 
@@ -241,8 +208,7 @@ ul li::before {
     object-fit: cover; 
 }
 
-
-/* סקשן הניווט הראשי (GRID) */
+/* --- GRID ניווט (החלק הקריטי שנשבר קודם) --- */
 .navigation-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -295,7 +261,7 @@ ul li::before {
     color: var(--primary-color);
 }
 
-/* סקשן תוכן בדפי המשנה */
+/* תוכן דף משנה */
 .subpage-content {
     padding: 40px;
     background-color: var(--card-bg);
@@ -324,7 +290,7 @@ ul li::before {
     font-size: 1.1em;
 }
 
-/* איזור כפתורי יצירת קשר */
+/* כפתורי יצירת קשר תחתונים */
 .contact-buttons {
     text-align: center;
     margin-top: 50px;
@@ -337,7 +303,6 @@ ul li::before {
     flex-wrap: wrap; 
 }
 
-/* Footer כללי */
 footer {
     text-align: center;
     margin-top: 60px;
@@ -349,25 +314,48 @@ footer {
     letter-spacing: 0.5px;
 }
 
-/* וידאו רספונסיבי */
-.video-responsive {
-    position: relative;
-    padding-bottom: 56.25%; 
-    padding-top: 25px;
-    height: 0;
-    margin: 20px 0;
+/* --- עיצוב קישורי סושיאל (מבודד כדי לא לשבור GRID) --- */
+.social-links {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px; 
+    margin: 20px auto 40px auto; 
+    max-width: 100%; 
 }
 
-.video-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.social-link {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+    width: 260px; /* גודל קבוע */
+    background-color: var(--social-bg-color); 
+    color: white; 
+    text-decoration: none; 
+    padding: 10px 15px; 
+    border-radius: 50px; 
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45); 
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2); 
+    transform: translateY(0);
 }
+
+.social-link:hover {
+    background-color: var(--social-hover-color); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    transform: translateY(-4px); 
+}
+
+.social-link .social-name { font-size: 1.1em; }
+
+.social-link img {
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+.social-link:hover img { transform: scale(1.05); }
 
 
 /* רספונסיביות */
@@ -377,12 +365,9 @@ footer {
         padding: 20px;
         box-sizing: border-box;
     }
-    .main-header h1 {
-        font-size: 3.5em;
-    }
-    .main-header p {
-        font-size: 1.6em;
-    }
+    .main-header h1 { font-size: 3.5em; }
+    .main-header p { font-size: 1.6em; }
+    
     .about-me-section {
         flex-direction: column;
         text-align: center;
@@ -397,6 +382,7 @@ footer {
         text-align: center;
         font-size: 2em;
     }
+    
     .navigation-grid {
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
         gap: 25px;
@@ -405,11 +391,8 @@ footer {
         width: 110px;
         height: 110px;
     }
-    .nav-item p {
-        font-size: 1em;
-    }
     
-    /* כפתורי קשר במובייל - למניעת חיתוך ומריחה */
+    /* תיקון כפתורים במובייל - למניעת חיתוך ומריחה */
     .contact-buttons {
         flex-direction: column; 
         padding-left: 10px;
@@ -445,19 +428,11 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .main-header h1 {
-        font-size: 2.8em;
-    }
-    .main-header p {
-        font-size: 1.2em;
-    }
-    .profile-image-container {
-        width: 140px;
-        height: 140px;
-    }
-    .about-me-text h2 {
-        font-size: 1.8em;
-    }
+    .main-header h1 { font-size: 2.8em; }
+    .main-header p { font-size: 1.2em; }
+    .profile-image-container { width: 140px; height: 140px; }
+    .about-me-text h2 { font-size: 1.8em; }
+    
     .navigation-grid {
         grid-template-columns: repeat(2, 1fr); 
         gap: 15px;
@@ -466,16 +441,10 @@ footer {
         width: 90px;
         height: 90px;
     }
-    .nav-item p {
-        font-size: 0.9em;
-    }
+    .nav-item p { font-size: 0.9em; }
+    
     .button, .whatsapp-button {
         padding: 10px 15px;
         font-size: 0.9em;
     }
-    
-    .social-link img {
-        width: 30px;
-        height: 30px;
-    }
-                                }
+}
